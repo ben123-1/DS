@@ -1,0 +1,369 @@
+/* Подложка серого цветв */
+body 
+ {
+    background-color: gainsboro;
+    width: 75%;
+    margin: auto;
+    font-size: 0.75rem;
+ }
+
+ /* header { */
+  
+  
+  /* background-image: url(images/mariupol-panarama.jpg);
+  background: #00b0d8 url(images/header-gradient.png) repeat-x;  */
+        /* Градиент */
+ /* } */
+ .mainmenu 
+ {
+  display: block;
+  margin: auto;
+  background-image: url(images/Boris-Butoma.jpg);
+  background-repeat: no-repeat;
+
+  background-size: contain;
+  /* background-size: 100%; */
+  height: 15rem; /*Высота шапки */
+  
+  text-align: center; /*Выравнивание по центру */
+ }
+ 
+ .header-bg img {
+  position: relative; /* Относительное позиционирование */
+  
+ }     */
+/* Адаптивный шрифт от бутстрап
+ html {
+  font-size: 1rem;
+}
+
+@include media-breakpoint-up(sm) {
+  html {
+    font-size: 1.2rem;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  html {
+    font-size: 1.4rem;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  html {
+    font-size: 1.6rem;
+  }
+} */
+
+ 
+/* Отступы от чекбоксов */
+ .menu2
+ {
+  padding: 6px 35px; 
+  font-size: 1rem;
+  /* Появляется рука при наведении на чекбокс или подпись */
+  cursor: pointer; 
+ }
+
+ #drop{
+	border:2px dashed #bbb;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+	padding:25px;
+	text-align:center;
+	font:20pt bold,"Vollkorn";color:#bbb
+}
+#b64data{
+	width:100%;
+}
+
+
+
+
+
+
+/* --------------------------------------------------------------------- */
+/* Оформление меню   */
+.tab button.active
+    {
+      /* background-color: rgb(236, 236, 236); */
+      background-image: linear-gradient(to right, deepskyblue,  rgb(229, 245, 250));
+
+      color:black;
+      font-weight: bold;
+      border: 1px solid  black;
+      border-bottom: none;
+    }
+   
+.tabcontent
+    {
+      display: none;
+      padding: 6px 0px;
+      border: 1px solid  deepskyblue;
+      border-top: none;
+      background-color: rgb(236, 236, 236);
+      animation: fadeEffect 1s; /* Fading effect takes 1 second */
+    }
+    .tablinks:hover {
+      background-image: linear-gradient(to right, deepskyblue,  rgb(229, 245, 250));
+      color: black; 
+    }
+  
+  /* Go from zero to full opacity */
+  @keyframes fadeEffect {
+      from {opacity: 0;}
+      to {opacity: 1;}
+  }
+
+ /* Оформление меню конец */
+
+
+ /* Оформление разделов на вкладках */
+ .subsection  
+    {
+      /* display: flex;    
+      justify-content: space-between; */
+      color: rgba(58, 140, 233, 0.979);
+      background-image: linear-gradient(to right, rgb(229, 245, 250), deepskyblue);
+      border-top: 1px solid  deepskyblue;
+      padding: 0px 12px;
+      /* Отступы ярлычков  */
+      margin: 3px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    
+  .hide
+  {
+    padding: 0px 12px;
+  }
+
+    
+  
+/* Кнопки свертыввания разделов на вкладках АККАРДИОН*/
+/* Style the buttons that are used to open and close the accordion panel */
+.accord {
+  /* background-color: #eee;
+  color: #444; */
+  cursor: pointer;
+  /* padding: 18px; */
+  /* width: 100%; */
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+}
+
+.accord:hover {
+  background-image: linear-gradient(to right, deepskyblue,  rgb(229, 245, 250));
+  color: black; 
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active.accord:hover {
+  background-image: linear-gradient(to right, deepskyblue,  rgb(229, 245, 250));
+  color: black; 
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.hide {
+  /* padding: 0 18px; */
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+.accord:after {
+  content: '\02795'; /* Unicode character for "plus" sign (+) */
+  /* font-size: 13px; */
+  color: #777;
+  float: right;
+  margin-left: 5px;
+}
+
+.active.accord:after {
+  content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+
+/* Нулевая строка для разварачивания и сварачмвания всего аккардиона */
+.openHide
+{ 
+  text-align: right;
+  color: black;
+ 
+
+}
+/* Кнопки свертыввания разделов на вкладках АККАРДИОН КОНЕЦ*/
+
+
+
+
+
+/* Круглая кнопочка для возврата на верх страницы */
+  /* формируем тело кнопки, положение и эффект перехода */
+  .scrollTop
+  {
+    /* по-умолчанию скрыта */
+        display: none;
+    /* скругяем углы */
+        -webkit-border-radius: 100%;
+        -moz-border-radius: 100%;
+        -ms-border-radius: 100%;
+        border-radius: 100%;
+    /* фиксируем позицию кнопки */
+        position: fixed;
+    /* размеры кнопки */   
+        width: 60px;
+        height: 60px;
+    /* положение кнопки */
+        right: 1rem;
+        bottom: 1rem;
+    /* вид курсора */
+        cursor: pointer;
+    /* эффект перехода между двумя состояниями кнопки */
+        -webkit-transition: bottom 0.2s cubic-bezier(0.42, 0, 0.58, 1);
+        -moz-transition: bottom 0.2s cubic-bezier(0.42, 0, 0.58, 1);
+        -ms-transition: bottom 0.2s cubic-bezier(0.42, 0, 0.58, 1);
+        -o-transition: bottom 0.2s cubic-bezier(0.42, 0, 0.58, 1);
+        transition: bottom 0.2s cubic-bezier(0.42, 0, 0.58, 1);
+  }
+    
+  /* смещение кнопки вверх при наведении */   
+  .scrollTop:hover
+  {
+        bottom: 2rem
+  }
+    
+  /* дополнительные элементы офрмления кнопки */  
+  .scrollTop:before,
+  .scrollTop:after
+  {
+        content: "";
+        top: 0;
+        left: 0;
+        background-color: #766DCC;
+        width: 60px;
+        height: 60px;
+        -webkit-border-radius: 100%;
+        -moz-border-radius: 100%;
+        -ms-border-radius: 100%;
+        border-radius: 100%;
+        -webkit-animation-fill-mode: both;
+        -moz-animation-fill-mode: both;
+        animation-fill-mode: both;
+        position: absolute;
+        opacity: 0;
+  }
+    
+  /* определяем имя, тип и скорость анимации для :before */
+  .scrollTop:before
+  {
+        background-color: #736cad;
+        -webkit-animation: clickMe 1.8s 333ms infinite ease-out;
+        -moz-animation: clickMe 1.8s 333ms infinite ease-out;
+        animation: clickMe 1.8s 333ms infinite ease-out
+  }
+    
+  /* определяем имя, тип и скорость анимации лля :after */
+  .scrollTop:after
+  {
+        -webkit-animation: clickMe 1.8s 777ms infinite ease-out;
+        -moz-animation: clickMe 1.8s 777ms infinite ease-out;
+        animation: clickMe 1.8s 777ms infinite ease-out
+  }
+    
+  /* формируем вид иконки */
+    .scrollTop i
+  {
+        width: 30px;
+        height: 30px;
+        display: block;
+        background: rgba(28, 144, 243, 0.61);
+        color: #fff;
+        text-align: center;
+        line-height: 30px;
+        font-size: 1.3rem;
+        background-size: 12px;
+        -webkit-border-radius: 100%;
+        -moz-border-radius: 100%;
+        -ms-border-radius: 100%;
+        border-radius: 100%;
+        position: absolute;
+        left: 15px;
+        top: 15px;
+        z-index: 100
+  }
+    
+  /* анимация */
+  @-webkit-keyframes clickMe
+  {
+        0%
+        {
+            opacity: 0;
+            -webkit-transform: scale(0)
+        }
+        5% 
+        {
+            opacity: 1
+        }
+        100%
+        {
+            opacity: 0
+        }
+    }   
+  @-moz-keyframes clickMe
+  {
+        0% 
+        {
+          opacity: 0;
+          -moz-transform: scale(0)
+        }
+        5%
+        {
+          opacity: 1
+        }
+        100%
+        {
+            opacity: 0
+        }
+    }
+    
+  @keyframes clickMe
+  {
+        0% 
+        {
+            opacity: 0;
+            -webkit-transform: scale(0);
+            -moz-transform: scale(0);
+            -ms-transform: scale(0);
+            -o-transform: scale(0);
+            transform: scale(0)
+        }
+        5%
+        {
+            opacity: 1
+        }
+        100%
+        {
+            opacity: 0
+        }
+  }
+
+  /* Липкий элемент */
+  div.sticky
+  {
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+  }
+
+  .vvod
+  {
+    /* border: 0px; */
+    /* margin: 0px;
+    padding: 0px; */
+    width: 100%;
+    height: 100%;
+  }
+ 
