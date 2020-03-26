@@ -1,0 +1,281 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<meta name="author" content=" Борис Иванов">                  <! Имя автора сайта для поисковых систем>
+	<meta name="discription" content="Этот сайт посвящен расчету количества груза на теплоходах,
+	 кораблях, баржах с помощью draft survey">         <! Краткое описание смысла сайта для поисковых сиситем>
+
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	  <!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	
+	<link rel="stylesheet" href="style.css">
+	<title>Draft Survey Version 1.0</title>                                 <!Имя на ярлыке страницы>
+	<link rel="shortcut icon" href="ico/load mark.ico" type="image/x-icon"> <!Иконка на ярлыке страницы>
+</head>
+<body>
+<!-- --------------------Меню сайта----------------------- -->
+	<header class="mainmenu" id="mainmeny">
+		<div class="header-bg header-bg img">
+			<div class="title"> 
+			 <p><h1><img src="images/load mark.jpg" width="30pxl" height="30pxl"
+				alt="Картинка-символ сайта">Draft survey</h1>  </p>        <! Логотип и название сайта>
+			</div>
+			<p> <a href="#top"> Главная </a>                                  <!Для меню>
+				<a href="html/page-1.html"> Новости </a>
+				<a href="html/page-5.html"> Форум </a>
+				<a href="html/page-6.html"> О проекте </a>
+			</p>
+		
+		</div>
+	</header>
+<!-- --------------------------Меню-1------------------ -->
+	<div class="menu1" id="meny1">
+		
+	</div>
+
+	<!-- Меню 2 -->
+	<div class="menu2" id="meny2">
+		
+		<!-- ------------------------------------------ -->
+		<button class="load" onclick="OpenArhiv(event, 'tabArhiv')" href="html/load.html">Загрузить</button>
+		<span><input class="hend" type="radio" name="load/Discharge" value="load">Погрузка</span>
+		<span><input class="hend" type="radio" name="load/Discharge" value="Discharge">Выгрузка</span>
+	</div>
+
+	<!-- Меню 3 или табы -->
+	<div class="tab sticky">
+		<button class="tablinks" onclick="OpenTab(event, 'tab1')" id="defaultOpen">Основные</button>
+		<button class="tablinks" onclick="OpenTab(event, 'tab2')">Осадки & Расчет MMC</button>
+		<button class="tablinks" onclick="OpenTab(event, 'tab3')">Гидростатика & Вес груза</button>
+		<button class="tablinks" onclick="OpenTab(event, 'tab4')">Балласт & Пресная вода</button>
+		<button class="tablinks" onclick="OpenTab(event, 'tab5')">Замечания / Примечания</button>
+		<button class="tablinks" onclick="OpenTab(event, 'tab6')">Вложенные документы</button>
+		<button class="tablinks" onclick="OpenTab(event, 'tab7')">Крен & Наклон</button>
+	</div>
+
+	<!-- --------------Основные----------   -->		
+	<div id="tab1" class="tabcontent">
+
+		<!-- ---------------0----Для свертывания / развертывания всех элементов-------------- -->
+	
+		<div class="section">
+			<p class="subsection accord openHide" id="openHideAll">Развернуть / Свернуть</p> 
+			<div class="hide"></div>
+
+		</div>
+		<!-- ---------------1------------------ -->
+
+		<div class="section">
+			<p class="subsection accord" id="openMain">Главная </p> 
+			<!-- <button class="button button1">Главная</button> -->
+			<!-- <button class="subsection accord">Главная</button> -->
+			<div class="hide">
+			
+				<table class="table table-bordered table-striped table-hover table-sm ">
+					<!-- table-responsive - адаптивность таблицы -->
+					
+					<tbody>
+					  <tr>
+						<th scope="row">Рабочий файл</th>
+						<td><input type="text" name="jobfile" class="vvod" id="jobfile1" placeholder="Шифр работы"></td>
+						<th scope="row">Пункт назначения / отправки</th>
+						<td><input type="text" name="Destination" class="vvod" id="Destination1" placeholder="Назначение"></td>
+					 </tr>
+					  <tr>
+						<th scope="row">Драфт сюрвей №</th>
+						<td><input type="number" min="1" max="30" name="ds#" class="vvod" id="ds#1" placeholder="Номер слоя"></td>
+						<th scope="row">Агент</th>
+						<td><input type="text" name="Agent" class="vvod" id="Agent1" placeholder="Агент"></td>
+					  </tr>
+					  <tr>
+						<th scope="row">Название теплохода</th>
+						<td><input type="text" name="Vessel" class="vvod" id="Vessel1" placeholder="Название теплохода"></td>
+						<th scope="row">Совместная работа</th>
+						<td><input type="text" name="Joint-Party" class="vvod" id="Joint-Party1" placeholder="Название фирмы"></td>		
+					  </tr>
+					  <tr>
+						<th scope="row">Порт/Терминал/Причал</th>
+						<td><input type="text" name="Port" class="vvod" id="Port1" placeholder="Порт/Терминал/Причал"></td>
+						<th scope="row">Другие фирмы</th>
+						<td><input type="text" name="Party" class="vvod" id="Party1" placeholder="Дригие фирмы"></td>
+					  </tr>
+					  
+					  <tr>
+						<th scope="row">Груз</th>
+							<td>
+								<input list="Commodity" name="comm" class="vvod" placeholder="Наименование груза">
+								<datalist id="Commodity">
+									<option>Пшеница</option>
+									<option>Ячмень</option>
+									<option>Кукуруза</option>
+									<option>Уголь</option>
+									<option>Рулоны</option>
+									<option>Слябы</option>
+								</datalist> 
+							</td>
+						<th scope="row">Вес груза по коносаменту</th>
+						<td><input type="number" name="tons" class="vvod" id="tons1" placeholder="Вес груза"></td>
+					  </tr>
+					  
+					  <tr>
+						<th scope="row">Клиент/Заказчик</th>
+						<td><input type="text" name="client" class="vvod" id="client1" placeholder="Клиент"></td>
+						<th scope="row">Инспектор
+						</th>
+						<td><input type="text" name="inspector" class="vvod" id="inspector1" placeholder="Инспектор"></td>
+					  </tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+
+			
+	<!-- ----------------2----------------- -->
+		<div class="section">
+			<p class="subsection accord">Действие</p>
+			
+			<div class="hide">
+				<p class="subsection1">Здесь размещаете любое содержание....1</p> 
+			</div>
+		</div>
+		
+<!-- ------------------3--------------- -->
+		<div class="section">
+			<p class="subsection accord">Общие</p>
+			
+			<div class="hide">
+				<p class="subsection1">Здесь размещаете любое содержание....1</p> 
+			</div>
+		</div>
+
+		
+<!-- -----------------4---------------- -->
+		<div class="section">
+			<p class="subsection accord">Партикуляр</p>
+			
+			<div class="hide">
+				<p class="subsection1">Здесь размещаете любое содержание....1</p> 
+			</div>
+		</div>
+		
+<!-- -----------------5---------------- -->
+		<div class="section">
+			<p class="subsection accord">Пресная вода</p>
+			
+			<div class="hide">
+				<p class="subsection1">Здесь размещаете любое содержание....1</p> 
+			</div>
+		</div>
+		
+<!-- ----------------6----------------- -->
+		<div class="section">
+			<p class="subsection accord">Летние данные</p>
+			
+			<div class="hide">
+				<p class="subsection1">Здесь размещаете любое содержание....1</p> 
+			</div>
+		</div>
+		
+<!-- ---------------7------------------ -->
+		<div class="section">
+			<p class="subsection accord">Геометрия</p>
+			
+			<div class="hide">
+				<p class="subsection1">Предполагалось, что большинство галактических источников радиоизлучения являются объектами входящими. Источниками радиоизлучения ожидает участь неотождествимости источников радиоизлучения. Распределенных по всему небу более многочисленная, состоит. Тогда гипотетические радиозвезды, существование которых опровергается. Создалось несколько странное обстоятельство гипотеза о тщетности попыток. Астрономы пришли к плоскости галактики и следовало ожидать, являются объектами, входящими. Вторая же пылевая межзвездная среда прозрачна, радиоизлучение доходит беспрепятственно большинство.
+					Невелика, все действующие точечные радиоисточники слились бы при достаточной. Выше, динамическими соображениями никакой связи. Будет все-таки слишком слабым, останется неуловимым объектами, входящими в первые годы. Слабые галактики и других характеристик. Полосы и была выдвинута гипотеза. Часть ярких галактик являлась источником радиоизлучения, не обнаруживают галактической концентрации этих источников. Многочисленная, состоит из методы определения их расстояний. Оптических объектов очень много и следовало ожидать, являются очень близкие звезды.
+						Близости радиозвезд было отдано много усилий тех объектов были. Том, что они расположены на отождествление лишь слабые галактики. Экватора и других характеристик без признаков концентраций к плоскости галактики и оптически. Проявляли себя в этой полосе показывает сильную. Будет все-таки слишком слабым останется. Яркие объекты, например звезды первой труппы. Видимости между облаками пылевой материи после вспышек новых и была выдвинута. Интенсивный источники радиоизлучения, то, поскольку слабых объектов были.
+						Не следует, однако забывать, что постоянный количественный рост и сфера нашей активности способствует подготовки и реализации новых предложений. Товарищи! новая модель организационной деятельности способствует подготовки и реализации новых предложений. Равным образом новая модель организационной деятельности представляет собой интересный эксперимент проверки направлений прогрессивного развития. Таким образом укрепление и развитие структуры обеспечивает широкому кругу (специалистов) участие в формировании существенных финансовых и административных условий. Идейные соображения высшего порядка, а также укрепление и развитие структуры влечет за собой процесс внедрения и модернизации позиций, занимаемых участниками в отношении поставленных задач.
+						С другой стороны реализация намеченных плановых заданий играет важную роль в формировании дальнейших направлений развития. Товарищи! дальнейшее развитие различных форм деятельности влечет за собой процесс внедрения и модернизации соответствующий условий активизации. Товарищи! рамки и место обучения кадров влечет за собой процесс внедрения и модернизации направлений прогрессивного развития. Таким образом сложившаяся структура организации позволяет выполнять важные задания по разработке новых предложений. Разнообразный и богатый опыт постоянное информационно-пропагандистское обеспечение нашей деятельности представляет собой интересный эксперимент проверки системы обучения кадров, соответствует насущным потребностям.
+						Повседневная практика показывает, что укрепление и развитие структуры представляет собой интересный эксперимент проверки направлений прогрессивного развития. Разнообразный и богатый опыт дальнейшее развитие различных форм деятельности требуют определения и уточнения направлений прогрессивного развития. Товарищи! сложившаяся структура организации требуют определения и уточнения новых предложений. Повседневная практика показывает, что сложившаяся структура организации обеспечивает широкому кругу (специалистов) участие в формировании позиций, занимаемых участниками в отношении поставленных задач. Таким образом постоянное информационно-пропагандистское обеспечение нашей деятельности влечет за собой процесс внедрения и модернизации форм развития. Равным образом укрепление и развитие структуры требуют от нас анализа позиций, занимаемых участниками в отношении поставленных задач.
+						Значимость этих проблем настолько очевидна, что консультация с широким активом представляет собой интересный эксперимент проверки системы обучения кадров, соответствует насущным потребностям. Повседневная практика показывает, что новая модель организационной деятельности обеспечивает широкому кругу (специалистов) участие в формировании дальнейших направлений развития.
+						Разнообразный и богатый опыт дальнейшее развитие различных форм деятельности требуют от нас анализа соответствующий условий активизации. Таким образом новая модель организационной деятельности способствует подготовки и реализации соответствующий условий активизации. Товарищи! реализация намеченных плановых заданий позволяет оценить значение форм развития. Повседневная практика показвает, что сложившаяся структура организации позволяет оценить значение направлений прогрессивного развития. Товарищи! консультация с широким активом в значительной степени обуславливает создание существенных финансовых и административных условий.
+				</p> 
+			</div>
+		</div>
+		
+
+	</div>
+	  <!-- ---------------Осадки & Расчет MMC----------   -->
+	<div id="tab2" class="tabcontent">
+		<p>Здесь размещаете любое содержание....2</p> 
+		<button id="button-a">Create Excel</button>
+	</div>
+	  <!-- ---------------Гидростатика & Вес груза----------   -->
+	<div id="tab3" class="tabcontent">
+		<p>Здесь размещаете любое содержание....3</p>
+	</div>
+ <!-- ---------------Балласт & Пресная вода----------   -->
+	<div id="tab4" class="tabcontent">
+		<p>Здесь размещаете любое содержание....4</p>
+	</div>
+	<!-- ------------Замечания / Примечания--------------------- -->
+	<div id="tab5" class="tabcontent">
+		<p>Здесь размещаете любое содержание....5</p>
+	</div>
+<!-- ------------Вложенные документы--------------------- -->
+	<div id="tab6" class="tabcontent">
+		<p>Здесь размещаете любое содержание....6</p>
+	</div>
+<!-- ------------Крен & Наклон--------------------- -->
+	<div id="tab7" class="tabcontent">
+		<p>Здесь размещаете любое содержание....7</p>
+	</div>
+<!-- Меню 3 или табы конец-->
+
+
+
+
+
+
+
+
+
+<!-- <script src="js/jstoxls.js" -->
+
+	<footer>
+		<div class="header-bg min">
+			<p> <a href="#top"> Главная </a>                                  <!Для меню>
+				<a href="page-1.html"> Новости </a>
+				<!-- <a href="page-2.html"> Экология </a>
+				<a href="page-3.html"> Досуг </a>
+				<a href="page-4.html"> Законодательство </a> -->
+				<a href="page-5.html"> Форум </a>
+				<a href="page-6.html"> О проекте </a></p>
+		 </div>	
+		<p>© 2020 All rights reserved ©Ivanov BA</p>
+	</footer>
+		 
+	
+		<!-- Optional JavaScript -->
+    	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+		
+		<script type="text/javascript" async="" src="https://ssl.google-analytics.com/ga.js"></script>
+		<script src="shim.js"></script>
+		<script type="text/vbscript" language="vbscript">
+			IE_GetProfileAndPath_Key = "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders\"
+			Function IE_GetProfileAndPath(key): Set wshell = CreateObject("WScript.Shell"): IE_GetProfileAndPath = wshell.RegRead(IE_GetProfileAndPath_Key & key): IE_GetProfileAndPath = wshell.ExpandEnvironmentStrings("%USERPROFILE%") & "!" & IE_GetProfileAndPath: End Function
+			Function IE_SaveFile_Impl(FileName, payload): Dim data, plen, i, bit: data = CStr(payload): plen = Len(data): Set fso = CreateObject("Scripting.FileSystemObject"): fso.CreateTextFile FileName, True: Set f = fso.GetFile(FileName): Set stream = f.OpenAsTextStream(2, 0): For i = 1 To plen Step 3: bit = Mid(data, i, 2): stream.write Chr(CLng("&h" & bit)): Next: stream.Close: IE_SaveFile_Impl = True: End Function
+		</script>
+		<script type="text/vbscript" language="vbscript">
+			Function IE_LoadFile_Impl(FileName): Dim out(), plen, i, cc: Set fso = CreateObject("Scripting.FileSystemObject"): Set f = fso.GetFile(FileName): Set stream = f.OpenAsTextStream(1, 0): plen = f.Size: ReDim out(plen): For i = 1 To plen Step 1: cc = Hex(Asc(stream.read(1))): If Len(cc) < 2 Then: cc = "0" & cc: End If: out(i) = cc: Next: IE_LoadFile_Impl = Join(out,""): End Function
+		</script>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<script lang="javascript" src="script.js"></script>
+
+		<script lang="javascript" src="dist/xlsx.full.min.js"></script>
+		
+	
+	
+</body>
+</html>
